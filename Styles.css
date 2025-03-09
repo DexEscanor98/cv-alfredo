@@ -30,6 +30,10 @@ body {
     text-align: center;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido */
+    justify-content: center;
 }
 
 /* 🔹 Imagen ajustada sin cambiar diseño */
@@ -82,24 +86,26 @@ li::before {
         max-width: 100%;
         border-bottom-left-radius: 0;
         border-top-right-radius: 20px;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
     }
 
     .right-section {
         width: 100%;
         border-left: none;
         padding: 20px;
-    }
-
-    .profile-pic {
-        width: 100px;
-        height: 100px;
+        text-align: left; /* Mantiene texto alineado a la izquierda */
     }
 }
 
 /* 🔹 Mejora en pantallas MUY pequeñas (Menos de 600px) */
 @media (max-width: 600px) {
     .left-section {
-        padding: 20px;
+        padding: 15px;
     }
 
     .right-section {
@@ -117,5 +123,10 @@ li::before {
     .profile-pic {
         width: 90px;
         height: 90px;
+    }
+
+    .cv-container {
+        width: 95%; /* Asegura que ocupe bien el espacio */
+        max-width: 100%;
     }
 }
