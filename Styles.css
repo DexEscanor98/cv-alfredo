@@ -10,21 +10,26 @@ body {
     min-height: 100vh;
 }
 
+/* 🔹 Contenedor Principal */
 .cv-container {
-    width: 80%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 1100px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-wrap: wrap; /* Permite que las columnas se acomoden */
     overflow: hidden;
 }
 
+/* 🔹 Sección Izquierda */
 .left-section {
-    width: 35%;
+    width: 30%;
     background: #F5F5F7;
     padding: 30px;
     text-align: center;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 /* 🔹 Imagen ajustada sin cambiar diseño */
@@ -37,20 +42,20 @@ body {
     border: 3px solid #E0E0E0; /* Borde sutil para estética */
 }
 
+/* 🔹 Sección Derecha */
 .right-section {
-    width: 65%;
+    flex: 1;
     padding: 30px;
     border-left: 2px solid #E0E0E0;
+    min-width: 320px; /* Asegura que no se haga muy pequeño en móviles */
 }
 
+/* 🔹 Ajuste de textos */
 h1, h2, h3 {
     color: #1D1D1F;
 }
 
-.job, .education, .skills {
-    margin-bottom: 20px;
-}
-
+/* 🔹 Lista con viñetas personalizadas */
 ul {
     list-style: none;
     padding: 0;
@@ -63,4 +68,54 @@ li::before {
     display: inline-block; 
     width: 1em;
     margin-left: -1em;
+}
+
+/* 🔹 RESPONSIVE DESIGN PARA MÓVILES Y TABLETS */
+@media (max-width: 1024px) {
+    .cv-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-section {
+        width: 100%;
+        max-width: 100%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+    }
+
+    .right-section {
+        width: 100%;
+        border-left: none;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 🔹 Mejora en pantallas MUY pequeñas (Menos de 600px) */
+@media (max-width: 600px) {
+    .left-section {
+        padding: 20px;
+    }
+
+    .right-section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
 }
